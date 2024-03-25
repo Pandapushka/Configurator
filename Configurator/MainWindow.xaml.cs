@@ -35,6 +35,7 @@ namespace Configurator
         private void ButtonClouse(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Закрыть");
+            //123
         }
         private void ButtonSave(object sender, RoutedEventArgs e)
         {
