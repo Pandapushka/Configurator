@@ -21,5 +21,9 @@
         <Button  Content="Удалить" FontSize="13" Click="ButtonDeleteDevices" Grid.Column="0" Grid.Row="2" Width="120" HorizontalAlignment="Right" Background="LightBlue"/>
         <Button  Content="Закрыть" FontSize="13" Click="ButtonClouse" Grid.Column="1" Grid.Row="2" Background="LightBlue"/>
         <Button  Content="Сохранить" FontSize="13" Click="ButtonSave" Grid.Column="1" Grid.Row="1" Background="LightBlue"/>
+        <Grid Background="SteelBlue">
+        </Grid>
+        <Grid Background="LightSlateGray" Grid.Column="1">
+        </Grid>
     </Grid>
 </Window>
