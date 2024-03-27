@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Configurator.Model;
+using Configurator.Pages;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,14 +13,16 @@ using System.Windows.Shapes;
 
 namespace Configurator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
+            DeviseStorage storage = new DeviseStorage();
+            List<Device> devices = storage.GetDevices();
             InitializeComponent();
+            treeView1.ItemsSource = devices;
         }
         private void ButtonCheckDevices(object sender, RoutedEventArgs e)
         {
@@ -26,7 +30,8 @@ namespace Configurator
         }
         private void ButtonAddDevices(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Добавить");
+            AddDevicesWindow addDevicesWindow = new AddDevicesWindow();
+            addDevicesWindow.ShowDialog();
         }
         private void ButtonDeleteDevices(object sender, RoutedEventArgs e)
         {
@@ -39,6 +44,10 @@ namespace Configurator
         private void ButtonSave(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Сохранить");
+        }
+        private void OpenPage(object sender, RoutedEventArgs e)
+        {
+            FramePage.Content = new InfoPage();
         }
     }
 }

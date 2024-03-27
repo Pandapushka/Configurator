@@ -1,0 +1,39 @@
+﻿<Window x:Class="Configurator.AddDevicesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Configurator"
+        mc:Ignorable="d"
+        Title="Добавление устройства" Height="450" Width="800">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="215*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="102*"/>
+            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition Width="528*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Click="ButtonAddDevices" Content="Добавить" Grid.ColumnSpan="4" HorizontalAlignment="Left" Style="{DynamicResource ButtonAddDevices}"/>
+        <Button Grid.Column="4" Click="ButtonClouseWindow" Content="Закрыть" HorizontalAlignment="Right" Style="{DynamicResource ButtonAddDevices}"/>
+        <TextBlock Text="Тип устройства:" Grid.Row="1" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
+        <TextBlock Text="Тип:" Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
+        <TextBlock Text="Модель:" Grid.Row="3" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
+        <TextBlock Text="Порт:" Grid.Row="4" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
+        <TextBlock Text="Адрес:" Grid.Row="5" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
+        <ComboBox Grid.Row="1" Grid.Column="2"/>
+        <ComboBox Grid.Row="2" Grid.Column="2"/>
+        <ComboBox Grid.Row="3" Grid.Column="2"/>
+        <ComboBox Grid.Row="4" Grid.Column="2"/>
+        <TextBox Grid.Row="5" Grid.Column="2"/>
+    </Grid>
+</Window>
