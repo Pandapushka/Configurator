@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Configurator.Model.ComboBoxData;
+using Configurator.Model.Entities;
+using Configurator.Model.Lists;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Configurator
 {
@@ -22,14 +13,43 @@ namespace Configurator
         public AddDevicesWindow()
         {
             InitializeComponent();
+            FillDeviceTypeComboBox();
+            FillTypeComboBox();
+            FiilComPortComboBox();
         }
         private void ButtonAddDevices(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Добавить");
+            //Добавить валидацию
+            DeviceDTO.SetNewDevice(ModelName.Text, DeviceTypeCB.Text, TypeCB.Text, ComPortCB.Text, Convert.ToInt32(Addres.Text));
+            MessageBox.Show($"Добавить {ModelName.Text}");
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
         private void ButtonClouseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void FillDeviceTypeComboBox()
+        {
+            DeviceTypes dt = new();
+            List<string> deviceTypes = dt.GetDeviceTypeList();
+            DeviceTypeCB.ItemsSource = deviceTypes;
+        }
+
+        private void FillTypeComboBox()
+        {
+            Types t = new();
+            List<string> types = t.GetTypeList();
+            TypeCB.ItemsSource = types;
+        }
+
+        private void FiilComPortComboBox()
+        {
+            ComPorts cp = new();
+            List<string> ports = cp.GetComPortsList();
+            ComPortCB.ItemsSource = ports;
         }
     }
 }

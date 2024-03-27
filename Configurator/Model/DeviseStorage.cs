@@ -13,14 +13,18 @@ namespace Configurator.Model
         {
             devices = new List<Device>
             {
-                new Device("ModBass1", "ТипДевайса1", "Тип1", 1, 1),
-                new Device("ModBass2", "ТипДевайса2", "Тип2", 2, 2),
+                new Device("ModBass1", "ТипДевайса1", "Тип1", "COM1", 1),
+                new Device("ModBass2", "ТипДевайса2", "Тип2", "COM2", 2),
             };
         }
 
         public List<Device> GetDevices() 
         {
             return devices;
+        }
+        public void AddDevice(Device device)
+        {
+            devices.Add(device);
         }
     }
 }

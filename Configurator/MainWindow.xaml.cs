@@ -1,26 +1,19 @@
 ﻿using Configurator.Model;
+using Configurator.Model.Entities;
 using Configurator.Pages;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Configurator
 {
-    
+
     public partial class MainWindow : Window
     {
-        
+        List<Device> devices;
         public MainWindow()
         {
             DeviseStorage storage = new DeviseStorage();
-            List<Device> devices = storage.GetDevices();
+            DeviceDTO.DeviceAdd += AddDeviceToList;
+            devices = storage.GetDevices();
             InitializeComponent();
             treeView1.ItemsSource = devices;
         }
@@ -31,7 +24,8 @@ namespace Configurator
         private void ButtonAddDevices(object sender, RoutedEventArgs e)
         {
             AddDevicesWindow addDevicesWindow = new AddDevicesWindow();
-            addDevicesWindow.ShowDialog();
+            addDevicesWindow.Show();
+            this.Close();
         }
         private void ButtonDeleteDevices(object sender, RoutedEventArgs e)
         {
@@ -48,6 +42,19 @@ namespace Configurator
         private void OpenPage(object sender, RoutedEventArgs e)
         {
             FramePage.Content = new InfoPage();
+        }
+        private void AddDeviceToList()
+        {
+            devices.Add(
+                new Device
+                (
+                    DeviceDTO.Name,
+                    DeviceDTO.TypeDevice,
+                    DeviceDTO.Type,
+                    DeviceDTO.Port,
+                    DeviceDTO.Addres
+                )
+                ) ;
         }
     }
 }

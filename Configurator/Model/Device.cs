@@ -11,10 +11,10 @@ namespace Configurator.Model
         public string Name { get; set; }
         public string TypeDevice { get; set; }
         public string Type { get; set; }
-        public int Port { get; set; }
+        public string Port { get; set; }
         public int Addres { get; set; }
 
-        public Device(string name, string typeDev, string type, int port, int addres) 
+        public Device(string name, string typeDev, string type, string port, int addres) 
         {
             Name = name;
             TypeDevice = typeDev;

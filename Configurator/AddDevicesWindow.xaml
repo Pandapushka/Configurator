@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Configurator"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Добавление устройства" Height="450" Width="800">
-    <Grid Background="LightGray">
+
+            <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="14*"/>
             <RowDefinition Height="35*"/>
@@ -30,10 +32,10 @@
         <TextBlock Text="Модель:" Grid.Row="3" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
         <TextBlock Text="Порт:" Grid.Row="4" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
         <TextBlock Text="Адрес:" Grid.Row="5" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
-        <ComboBox Grid.Row="1" Grid.Column="2"/>
-        <ComboBox Grid.Row="2" Grid.Column="2"/>
-        <ComboBox Grid.Row="3" Grid.Column="2"/>
-        <ComboBox Grid.Row="4" Grid.Column="2"/>
-        <TextBox Grid.Row="5" Grid.Column="2"/>
+        <ComboBox  Grid.Row="1" Grid.Column="2" Name="DeviceTypeCB" />
+        <ComboBox Grid.Row="2" Grid.Column="2" Name="TypeCB"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Name="ModelName"/>
+        <ComboBox Grid.Row="4" Grid.Column="2" Name="ComPortCB"/>
+        <TextBox Grid.Row="5" Grid.Column="2" Name="Addres"/>
     </Grid>
 </Window>
