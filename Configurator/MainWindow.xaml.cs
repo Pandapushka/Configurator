@@ -24,8 +24,8 @@ namespace Configurator
         private void ButtonAddDevices(object sender, RoutedEventArgs e)
         {
             AddDevicesWindow addDevicesWindow = new AddDevicesWindow();
-            addDevicesWindow.Show();
-            this.Close();
+            addDevicesWindow.ShowDialog();
+
         }
         private void ButtonDeleteDevices(object sender, RoutedEventArgs e)
         {

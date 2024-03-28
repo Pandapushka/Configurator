@@ -22,8 +22,6 @@ namespace Configurator
             //Добавить валидацию
             DeviceDTO.SetNewDevice(ModelName.Text, DeviceTypeCB.Text, TypeCB.Text, ComPortCB.Text, Convert.ToInt32(Addres.Text));
             MessageBox.Show($"Добавить {ModelName.Text}");
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
             this.Close();
         }
         private void ButtonClouseWindow(object sender, RoutedEventArgs e)
