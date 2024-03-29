@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Configurator"
+        xmlns:vm="clr-namespace:Configurator.ViewModel"
         mc:Ignorable="d"
         Title="Конфигуратор AlcoSpot" Height="600" Width="1100" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
@@ -17,11 +22,11 @@
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
 
-        <Button  Content="Проверить устройства" Click="ButtonCheckDevices" Grid.Column="0" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
-        <Button  Content="Добавить" Click="ButtonAddDevices" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle2}"/>
-        <Button  Content="Удалить" Click="ButtonDeleteDevices" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Style="{DynamicResource ButtonStyle2}"/>
+        <Button  Content="Проверить устройства" Command="{Binding ICheckDevice}" Grid.Column="0" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
+        <Button  Content="Добавить" Command="{Binding IOpenNewWindow}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle2}"/>
+        <Button  Content="Удалить" Command="{Binding IDeleteDevices}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Style="{DynamicResource ButtonStyle2}"/>
         <Button  Content="Закрыть" Click="ButtonClouse" Grid.Column="1" Grid.Row="2" Style="{DynamicResource ButtonStyle}"/>
-        <Button  Content="Сохранить" Click="ButtonSave" Grid.Column="1" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
+        <Button  Content="Сохранить" Command="{Binding ISave}" Grid.Column="1" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
         <Grid >
             <TreeView x:Name="treeView1"  Background="SteelBlue">
                 <TreeView.ItemTemplate >
