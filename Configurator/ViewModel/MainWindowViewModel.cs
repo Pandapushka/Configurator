@@ -10,19 +10,21 @@ namespace Configurator.ViewModel
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        public int Id { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
         public RelayCommand IOpenNewWindow => new RelayCommand(OpenAddNewDeviceWindow);
         public RelayCommand ICheckDevice => new RelayCommand(CheckDevices);
-        public RelayCommand IDeleteDevices => new RelayCommand(DeleteDevices);
+        public RelayCommand IDeleteDevices => new RelayCommand(d =>DeleteDevices(Id));
         public RelayCommand ISave => new RelayCommand(Save);
+
 
         private void OpenAddNewDeviceWindow()
         {
             AddDevicesWindow addDevicesWindow = new AddDevicesWindow();
             addDevicesWindow.ShowDialog();
         }
-        private void DeleteDevices()
+        private void DeleteDevices(int deviceId)
         {
             MessageBox.Show("Удалить");
         }

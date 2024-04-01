@@ -12,16 +12,13 @@ namespace Configurator
         List<Device> devices;
         public MainWindow()
         {
-            
             InitializeComponent();
             treeView1.ItemsSource = GetDeviceList();
             DeviceAddition.Notify += ReFillItems;
-
         }
         private void ReFillItems()
         {
             treeView1.ItemsSource = GetDeviceList();
-            
         }
         private List<Device> GetDeviceList()
         {
