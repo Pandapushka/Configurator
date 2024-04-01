@@ -8,6 +8,7 @@ namespace Configurator.Model
 {
     public class Device
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string TypeDevice { get; set; }
         public string Type { get; set; }

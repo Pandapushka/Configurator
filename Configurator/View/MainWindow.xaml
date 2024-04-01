@@ -23,7 +23,11 @@
         </Grid.RowDefinitions>
 
         <Button  Content="Проверить устройства" Command="{Binding ICheckDevice}" Grid.Column="0" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
-        <Button  Content="Добавить" Command="{Binding IOpenNewWindow}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle2}"/>
+        <Button  Content="Добавить" Command="{Binding IOpenNewWindow}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Style="{DynamicResource ButtonStyle2}">
+            <Button.DataContext>
+                <vm:MainWindowViewModel/>
+            </Button.DataContext>
+        </Button>
         <Button  Content="Удалить" Command="{Binding IDeleteDevices}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Style="{DynamicResource ButtonStyle2}"/>
         <Button  Content="Закрыть" Click="ButtonClouse" Grid.Column="1" Grid.Row="2" Style="{DynamicResource ButtonStyle}"/>
         <Button  Content="Сохранить" Command="{Binding ISave}" Grid.Column="1" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>

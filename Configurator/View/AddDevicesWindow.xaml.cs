@@ -1,6 +1,7 @@
 ﻿using Configurator.Model.ComboBoxData;
 using Configurator.Model.Entities;
 using Configurator.Model.Lists;
+using Configurator.ViewModel;
 using System.Windows;
 
 namespace Configurator
@@ -10,21 +11,23 @@ namespace Configurator
     /// </summary>
     public partial class AddDevicesWindow : Window
     {
+
         public AddDevicesWindow()
         {
+            DataContext = new DeviceViewModel();
             InitializeComponent();
             FillDeviceTypeComboBox();
             FillTypeComboBox();
             FiilComPortComboBox();
+            DeviceAddition.NotifyUpdateCom += CloseWindow;
         }
-        private void ButtonAddDevices(object sender, RoutedEventArgs e)
-        {
-            //Добавить валидацию
-            DeviceDTO.SetNewDevice(ModelName.Text, DeviceTypeCB.Text, TypeCB.Text, ComPortCB.Text, Convert.ToInt32(Addres.Text));
-            MessageBox.Show($"Добавить {ModelName.Text}");
-            this.Close();
-        }
+       
         private void ButtonClouseWindow(object sender, RoutedEventArgs e)
+        {
+            CloseWindow();
+        }
+
+        public void CloseWindow()
         {
             this.Close();
         }

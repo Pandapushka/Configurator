@@ -25,17 +25,17 @@
             <ColumnDefinition Width="151*"/>
             <ColumnDefinition Width="528*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" Click="ButtonAddDevices" Content="Добавить" Grid.ColumnSpan="4" HorizontalAlignment="Left" Style="{DynamicResource ButtonAddDevices}"/>
+        <Button Grid.Column="0" Command="{Binding IAddNewDevice}" Content="Добавить" Grid.ColumnSpan="4" HorizontalAlignment="Left" Style="{DynamicResource ButtonAddDevices}"/>
         <Button Grid.Column="4" Click="ButtonClouseWindow" Content="Закрыть" HorizontalAlignment="Right" Style="{DynamicResource ButtonAddDevices}"/>
         <TextBlock Text="Тип устройства:" Grid.Row="1" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
         <TextBlock Text="Тип:" Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
         <TextBlock Text="Модель:" Grid.Row="3" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
         <TextBlock Text="Порт:" Grid.Row="4" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
         <TextBlock Text="Адрес:" Grid.Row="5" Grid.Column="1" Style="{DynamicResource TextBlockAddDevices}"/>
-        <ComboBox  Grid.Row="1" Grid.Column="2" Name="DeviceTypeCB" />
-        <ComboBox Grid.Row="2" Grid.Column="2" Name="TypeCB"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Name="ModelName"/>
-        <ComboBox Grid.Row="4" Grid.Column="2" Name="ComPortCB"/>
-        <TextBox Grid.Row="5" Grid.Column="2" Name="Addres"/>
+        <ComboBox  Grid.Row="1" Grid.Column="2" Name="DeviceTypeCB" Text="{Binding TypeDevice, UpdateSourceTrigger=PropertyChanged}"/>
+        <ComboBox Grid.Row="2" Grid.Column="2" Name="TypeCB" Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Name="ModelName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <ComboBox Grid.Row="4" Grid.Column="2" Name="ComPortCB" Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="5" Grid.Column="2" Name="Addres" Text="{Binding Addres, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Window>
