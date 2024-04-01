@@ -28,14 +28,14 @@
                 <vm:MainWindowViewModel/>
             </Button.DataContext>
         </Button>
-        <Button  Content="Удалить" Command="{Binding IDeleteDevices}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Style="{DynamicResource ButtonStyle2}"/>
+        <Button  Content="Удалить"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Style="{DynamicResource ButtonStyle2}" Click="Button_Click"/>
         <Button  Content="Закрыть" Click="ButtonClouse" Grid.Column="1" Grid.Row="2" Style="{DynamicResource ButtonStyle}"/>
         <Button  Content="Сохранить" Command="{Binding ISave}" Grid.Column="1" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
         <Grid >
             <TreeView x:Name="treeView1"  Background="SteelBlue">
                 <TreeView.ItemTemplate >
                     <HierarchicalDataTemplate ItemsSource="{Binding Path=devices}">
-                        <Button Content="{Binding Name}" Background="Transparent" Click="OpenPage"/>
+                        <Button Content="{Binding Name}" Background="Transparent" Click="OpenPage" CommandParameter="{Binding}"/>
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>

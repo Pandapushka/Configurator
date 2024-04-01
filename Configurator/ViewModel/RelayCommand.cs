@@ -26,7 +26,7 @@ namespace Configurator.ViewModel
         }
         public RelayCommand(Action<object> execute2, Func<bool> canExecute = null)
         {
-            this.execute2 = execute2 ?? throw new ArgumentNullException(nameof(execute));
+            this.execute2 = execute2 ?? throw new ArgumentNullException(nameof(execute2));
             this.canExecute = canExecute;
         }
 
@@ -38,6 +38,10 @@ namespace Configurator.ViewModel
         public void Execute(object parameter)
         {
             execute();
+        }
+        public void Execute2(object parameter)
+        {
+            execute2(parameter);
         }
 
     }
