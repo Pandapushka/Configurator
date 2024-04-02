@@ -1,12 +1,6 @@
 ﻿using Configurator.Model;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Configurator.DataService
 {
@@ -67,11 +61,11 @@ namespace Configurator.DataService
             //генерируем новый id
             newDevice.Id = GenerateNewDeviceId();
             //Загружаем список девайсов
-            var device = LoadDevices();
+            var devices = LoadDevices();
             //Добавляем девайс к списку 
-            device.Add(newDevice);
+            devices.Add(newDevice);
             //Сохраняем изиеннеия 
-            SaveDevices(device);
+            SaveDevices(devices);
         }
 
         public void UpdateDevice(Device updateDevice) 

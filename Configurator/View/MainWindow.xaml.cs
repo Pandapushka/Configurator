@@ -2,7 +2,6 @@
 using Configurator.Model.Entities;
 using Configurator.Pages;
 using Configurator.ViewModel;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,7 +9,7 @@ namespace Configurator
 {
     public partial class MainWindow : Window
     {
-        private static int Id { get; set; }
+        private  int Id { get; set; }
         
         public MainWindow()
         {
