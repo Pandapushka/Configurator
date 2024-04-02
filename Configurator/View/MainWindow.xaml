@@ -28,7 +28,7 @@
                 <vm:MainWindowViewModel/>
             </Button.DataContext>
         </Button>
-        <Button  Content="Удалить"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Style="{DynamicResource ButtonStyle2}" Click="Button_Click"/>
+        <Button  Content="Удалить"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Style="{DynamicResource ButtonStyle2}" Click="DeleteClick"/>
         <Button  Content="Закрыть" Click="ButtonClouse" Grid.Column="1" Grid.Row="2" Style="{DynamicResource ButtonStyle}"/>
         <Button  Content="Сохранить" Command="{Binding ISave}" Grid.Column="1" Grid.Row="1" Style="{DynamicResource ButtonStyle}"/>
         <Grid >

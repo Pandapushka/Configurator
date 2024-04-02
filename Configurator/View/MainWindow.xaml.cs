@@ -8,7 +8,6 @@ using System.Windows.Controls;
 
 namespace Configurator
 {
-
     public partial class MainWindow : Window
     {
         private static int Id { get; set; }
@@ -40,19 +39,17 @@ namespace Configurator
             FramePage.Content = new InfoPage();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DeleteClick(object sender, RoutedEventArgs e)
         {
             if (Id == 0)
             {
-                MessageBox.Show("Не выбран прибор для удаления");
+                MessageBox.Show("Не выбран расходомер для удаления");
             }
             else 
             {
-                MessageBox.Show(Id.ToString());
                 DeviceViewModel deviceViewModel = new DeviceViewModel();
                 deviceViewModel.DeleteDevice(Id);
-                DeviceAddition.UpdateDeviceRemoved();
-
+                DeviceAddition.NewDeviceAdded();
             }
         }
     }
