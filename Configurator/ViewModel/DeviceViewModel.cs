@@ -19,6 +19,7 @@ namespace Configurator.ViewModel
         public ICommand IAddNewDevice => new RelayCommand(AddNewDevice);
 
         private readonly DeviseDataService _deviseDataService;
+        private readonly XMLSetingsWriter _xmlSetingsWriter;
 
         private ObservableCollection<Device> _devices;
 
@@ -36,7 +37,8 @@ namespace Configurator.ViewModel
 
         public DeviceViewModel()
         {
-                _deviseDataService = new DeviseDataService();
+            _deviseDataService = new DeviseDataService();
+            _xmlSetingsWriter = new XMLSetingsWriter();
         }
 
         private void LoadDevices()
@@ -54,6 +56,7 @@ namespace Configurator.ViewModel
         {
             Device newDevice = new(Name, TypeDevice, Type, Port, Addres);
             _deviseDataService.AddDevice(newDevice);
+            _xmlSetingsWriter.AddXMLSetings(newDevice);
             LoadDevices();
             DeviceAddition.NewDeviceAdded();
             DeviceAddition.UpdateDeviceRemoved();

@@ -14,6 +14,10 @@ namespace Configurator.Model
         public string Type { get; set; }
         public string Port { get; set; }
         public int Addres { get; set; }
+        public Device() 
+        {
+            
+        }
 
         public Device(string name, string typeDev, string type, string port, int addres) 
         {
