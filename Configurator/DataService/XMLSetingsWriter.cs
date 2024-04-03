@@ -36,7 +36,6 @@ namespace Configurator.DataService
             {
                 using (FileStream fs = new FileStream("setings.xml", FileMode.OpenOrCreate))
                 {
-                    int a = 0;
                     List<Device> devices = formatter.Deserialize(fs) as List<Device>;
                     if (devices != null)
                     {

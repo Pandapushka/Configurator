@@ -10,9 +10,17 @@
         {
             return new List<string>()
             {
-                "ТипДевайса1",
-                "ТипДевайса2",
-                "ТипДевайса3"
+                "flowmeter",
+                "fakelevelmeter",
+                "levelmeter",
+                "ups",
+                "counter",
+                "fakecounter",
+                "tempmodule",
+                "bubbledetector",
+                "io_module",
+                "fakeGpsTracker",
+                "tracker"
             };
         }
     }
